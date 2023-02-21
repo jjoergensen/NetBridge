@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Protobuf" Version="3.22.0" PrivateAssets="all" />
+    <PackageReference Include="Grpc" Version="2.46.6" PrivateAssets="all" />
+    <PackageReference Include="Grpc.Core" Version="2.46.6" PrivateAssets="all" />
+    <PackageReference Include="Grpc.Core.Api" Version="2.51.0" PrivateAssets="all" />
+    <PackageReference Include="Grpc.Net.Client" Version="2.51.0" PrivateAssets="all" />
+    <PackageReference Include="Grpc.Tools" Version="2.51.0" PrivateAssets="All">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+
+  </ItemGroup>
+
+  <ItemGroup>
+    <Protobuf Include="Protos\greet.proto" GrpcServices="Server" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\NetBridgeShared\NetBridge.Library.csproj" />
+    <ProjectReference Include="..\NetBridge\NetBridge.Host.csproj" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="if not exist &quot;$(SolutionDir)FrameworkApplication\bin\$(Configuration)\NetBridge&quot; mkdir &quot;$(SolutionDir)FrameworkApplication\bin\$(Configuration)\NetBridge&quot;&#xD;&#xA;xcopy &quot;$(TargetDir)*&quot; &quot;$(SolutionDir)FrameworkApplication\bin\$(Configuration)\NetBridge&quot; /Y" />
+  </Target>
+
+</Project>
