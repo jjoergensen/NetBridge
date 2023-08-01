@@ -9,6 +9,17 @@ It also enables you to isolate code in a process from the rest of your applicati
 
 You could also just use the gRPC library from cyanfish directly (mentioned in credits), but NetBridge provides a simple interface to call into a gRPC service.
 
+## Prerequisites
+In order to test the reference application, you need to first install .NET 6.0, which can be downloaded from here. However, you can use this project without .NET 6.0.
+
+## Project Overview
+Here's a brief overview of the projects included in the repository:
+
+**FrameworkApplication:** A demo application in .NET Framework 4.6.2 that calls a .NET 6 service in ExampleNetLibrary. Contains a post-build event.
+**ExampleNetLibrary:** A library written in .NET 6.
+**NetBridge.Host:** Necessary component for launching the proxy (essentially an executable file). Multi-targetted for both .net 6 and .net framework 4.6.2.
+**NetBridge.Library:** Enables the proxy to call the gRPC server. Multi-targetted for both .net 6 and .net framework 4.6.2.
+
 ## How to use NetBridge
 
 Included in the repository is an example of a .NET Framework application called "FrameworkApplication" that calls into a gRPC service included in ExampleNetLibrary.

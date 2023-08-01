@@ -16,7 +16,11 @@ using static ExampleNetLibrary.Services.Greeter;
 
 namespace FrameworkApplication
 {
-	internal partial class Program
+
+    /// <summary>
+    /// This is a demo app, that you can modify to fit your needs. It is a .NET 4.6.2 Framework that calls a .NET 6 library
+    /// </summary>
+    internal partial class Program
 	{
 		static void Main(string[] args)
 		{
@@ -27,7 +31,7 @@ namespace FrameworkApplication
 		{
 			#region Configure to .NET Core assembly
 			// Assembly is copied as a post-build event on the library we want to call
-			// It seems to be copied separately from the main app, as DLLs cannot mix.
+			// It is copied separately from the main app, as DLLs cannot mix.
 			var assemblyToLoad = @"\NetBridge\ExampleNetLibrary.dll";
 			var typeToLoad = "ExampleNetLibrary.ExampleServer";
 			#endregion

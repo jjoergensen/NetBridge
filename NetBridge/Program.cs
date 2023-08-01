@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
+// DO NOT MODIFY THIS CLASS
 
 namespace NetBridge.Host
 {
@@ -40,8 +41,6 @@ namespace NetBridge.Host
 			// somewhere else, and have it read the Assembly to load from a arg passed into this program.
 
 			// This would make this a simple program, that we compile once and just reuse.
-
-			//Console.ReadLine();
 
 			var assemblyToLoad = args[0];
 			var typeToLoad = args[1];
