@@ -10,7 +10,7 @@ It also enables you to isolate code in a process from the rest of your applicati
 You could also just use the gRPC library from cyanfish directly (mentioned in credits), but NetBridge provides a simple interface to call into a gRPC service.
 
 ## Prerequisites
-In order to test the reference application, you need to first install .NET 6.0, which can be downloaded from here. However, you can use this project without .NET 6.0.
+In order to test the reference application, you need to first install .NET 6.0 or a later version, which can be downloaded from [here](https://dotnet.microsoft.com/en-us/download/dotnet/6.0). However, you can use this project without .NET 6.0.
 
 ## Project Overview
 Here's a brief overview of the projects included in the repository:
